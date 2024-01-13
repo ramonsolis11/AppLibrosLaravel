@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('lib_asignar_categorias', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedInteger('cod_libro');
+            $table->foreign('cod_libro')->references('cod_libro')->on('lib_libro')->onDelete('cascade');
+
+            $table->unsignedInteger('cod_categoria');
+            $table->foreign('cod_categoria')->references('cod_categoria')->on('lib_categoria')->onDelete('cascade');
         });
     }
 
