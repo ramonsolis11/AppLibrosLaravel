@@ -9,7 +9,7 @@ class Genero extends Model
 {
     use HasFactory;
 
-    protected $table = 'lib_generos';
+    protected $table = 'lib_genero';
     protected $primaryKey = 'cod_genero';
     protected $fillable = ['descripcion'];
 }
